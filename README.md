@@ -1,4 +1,4 @@
-# image-captions-and-questions-with-replicate
+# image-captions-and-questions-to-CSV-with-replicate
 
 This Python script generates informative image descriptions and answers a user-defined question for a collection of images using the Replicate API. The output is conveniently saved to a CSV file.
 
