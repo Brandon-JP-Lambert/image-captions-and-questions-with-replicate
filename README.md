@@ -45,4 +45,4 @@ If issues persist, refer to the error messages for more information on the probl
 
 The script uses the Salesforce BLIP model, which is a powerful AI model capable of performing tasks such as image captioning and visual question answering. The model is accessed via the Replicate API, which provides a convenient way to integrate the model's capabilities into the script.
 
-You can find more information about the Salesforce BLIP model and the Replicate API on the [Replicate website](https://replicate.com/salesforce/blip/api) and on the [Salesforce Research blog](https://blog.salesforceairesearch.com/blip-2/)²¹.
+You can find more information about the Salesforce BLIP model and the Replicate API on the [Replicate website](https://replicate.com/salesforce/blip/api) and on the [Salesforce Research blog](https://blog.salesforceairesearch.com/blip-2/).
