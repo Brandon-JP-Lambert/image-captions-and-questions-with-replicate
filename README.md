@@ -86,6 +86,9 @@ The script will generate a CSV file containing the following columns:
 - `Caption`: The generated caption describing the image (using the Image Captioning task).
 - `Answer`: The answer to the sample question provided (using the Visual Question Answering task).
 
+# Sample Folders and Question
+
+# Sample Output
 | Image Filename | Caption | Answer |
 |----------------|---------|--------|
 | apple_sculpture_1.png | Caption: a paper sculpture of an apple with a spiral design | Answer: no |
