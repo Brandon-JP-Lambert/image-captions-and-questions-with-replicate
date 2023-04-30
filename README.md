@@ -6,11 +6,11 @@ This script processes a collection of images, generating descriptive captions an
 
 This Image Analysis and Description Generator script offers the following features:
 
-1. Batch processing: Analyze a collection of images in a single run, saving time and effort.
-2. Dual tasks: Generate both descriptive captions and answers to specific questions for each image.
-3. Salesforce Blip model integration: Utilize the powerful Salesforce Blip model for high-quality image captioning and visual question answering.
-4. CSV output: Export the generated captions and answers to a CSV file for easy review and further analysis.
-5. Customizable input and output: Easily define input and output folders and sample questions to suit your specific needs.
+- Batch processing: Analyze a collection of images in a single run, saving time and effort.
+- Dual tasks: Generate both descriptive captions and answers to specific questions for each image.
+- Salesforce Blip model integration: Utilize the powerful Salesforce Blip model for high-quality image captioning and visual question answering.
+- CSV output: Export the generated captions and answers to a CSV file for easy review and further analysis.
+- Customizable input and output: Easily define input and output folders and sample questions to suit your specific needs.
 
 ## Prerequisites
 
