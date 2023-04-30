@@ -86,7 +86,20 @@ The script will generate a CSV file containing the following columns:
 - `Caption`: The generated caption describing the image (using the Image Captioning task).
 - `Answer`: The answer to the sample question provided (using the Visual Question Answering task).
 
-# Sample Folders and Question
+## Sample Input
+
+```
+# Define input and output folders
+input_folder = 'C:\\Users\\example_user\\Images\\ArtGallery'
+output_folder = 'C:\\Users\\example_user\\Images\\Descriptions'
+output_csv = os.path.join(output_folder, 'GalleryImageDescriptions.csv')
+
+# Set your Replicate API token as an environment variable
+os.environ['REPLICATE_API_TOKEN'] = 'your_replicate_api_token_here'
+
+# Define a sample question for the visual question answering task
+sample_question = "Is there a person or persons in the image?"
+```
 
 # Sample Output
 | Image Filename | Caption | Answer |
