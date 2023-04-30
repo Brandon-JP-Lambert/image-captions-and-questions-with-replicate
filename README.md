@@ -86,6 +86,15 @@ The script will generate a CSV file containing the following columns:
 - `Caption`: The generated caption describing the image (using the Image Captioning task).
 - `Answer`: The answer to the sample question provided (using the Visual Question Answering task).
 
+| Image Filename | Caption | Answer |
+|----------------|---------|--------|
+| apple_sculpture_1.png | Caption: a paper sculpture of an apple with a spiral design | Answer: no |
+| apple_sculpture_2.png | Caption: a paper sculpture of a stylized apple | Answer: no |
+| boy_reading_book_1.png | Caption: a young boy reading a book with a bird perched on top of it | Answer: child |
+| boy_reading_book_2.png | Caption: a young boy reading a book with a bird perched on top of it | Answer: child |
+| girl_walking_dog_book.png | Caption: an open book with a picture of a girl walking a dog | Answer: person |
+| rocket_man_flying_1.png | Caption: a rocket with a man on it flying through the air | Answer: person |
+
 ## Troubleshooting
 
 If there is an error during the processing of an image, the script will print the error message, the filename of the image, and any generated output for the caption and/or visual question answering tasks.
