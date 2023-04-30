@@ -1,48 +1,81 @@
-# Image Captions and Questions to CSV with Replicate
+# Image Analysis and Description Generator
 
-This Python script generates informative image descriptions and answers a user-defined question for a collection of images using the Replicate API with the Salesforce BLIP model. The output is conveniently saved to a CSV file.
+This script processes a collection of images, generating descriptive captions and answering a specific question for each image using the Salesforce Blip model. The results are saved in a CSV file.
 
-## Features
+## Prerequisites
 
-- Automatically generate captions for images using the Salesforce BLIP AI model powered by Replicate.
-- Answer a pre-defined question about each image using the same AI model.
-- Save the image filenames, generated captions, and answers to a CSV file.
+To use this script, you'll need:
 
-## Requirements
+- Python 3.7 or later
+- The `replicate` Python library: Install it using `pip install replicate`
 
-The following Python libraries are required to run the script:
+## Replicate Package
 
-- `os`
-- `shutil`
-- `csv`
-- `replicate`
+The Replicate package is a Python library that allows you to interact with the Replicate platform's API. Replicate offers various pre-trained machine learning models for tasks such as image captioning, visual question answering, and more.
 
-## Setup and Configuration
+### Installation
 
-1. Install the required Python libraries.
-2. Set the `input_folder` variable to the path of the folder containing your image files.
-3. Set the `output_folder` variable to the path of the folder where you'd like to save the output CSV file.
-4. Replace the value of `REPLICATE_API_TOKEN` with your actual Replicate API token.
-5. Define a sample question for the visual question answering task by updating the `sample_question` variable.
+To install the Replicate package, run the following command:
+
+```bash
+pip install replicate
+```
+
+### Example Replicate Calls
+
+1. Image Captioning:
+
+```python
+caption_response = replicate.run(
+    "salesforce/blip:2e1dddc8621f72155f24cf2e0adbde548458d3cab9f00c0139eea840d0ac4746",
+    input={"image": image_file, "task": "image_captioning"}
+)
+```
+
+This call generates a caption describing the contents of an image.
+
+2. Visual Question Answering:
+
+```python
+answer_response = replicate.run(
+    "salesforce/blip:2e1dddc8621f72155f24cf2e0adbde548458d3cab9f00c0139eea840d0ac4746",
+    input={"image": image_file, "task": "visual_question_answering", "question": sample_question}
+)
+```
+
+This call answers a specific question about an image.
+
+### Documentation
+
+For more information about the Replicate package and its features, refer to the official documentation:
+
+- [Replicate Website](https://www.replicate.ai/)
+- [Replicate Python Library Documentation](https://docs.replicate.ai/)
 
 ## Usage
 
-Run the script after completing the setup and configuration steps. The script will process the images in the input folder, generate captions and answers to the pre-defined question using the Salesforce BLIP model, and save the results to a CSV file in the output folder.
+1. Set your input and output folders within the script:
+   - `input_folder`: The path to the folder containing your image files.
+   - `output_folder`: The path to the folder where the generated CSV file will be saved.
+   - `output_csv`: The path and filename for the generated CSV file.
 
-Ensure that the `input_folder`, `output_folder`, and `REPLICATE_API_TOKEN` values are updated with your desired paths and token before running the script.
+2. Set your Replicate API token as an environment variable:
+   - `os.environ['REPLICATE_API_TOKEN'] = 'your_api_token'`
+   Replace `'your_api_token'` with your actual Replicate API token.
+
+3. Define a sample question for the visual question answering task:
+   - `sample_question`: A string containing the question to be answered for each image.
+
+4. Run the script: `python image_analysis_and_description_generator.py`
+
+## Output
+
+The script will generate a CSV file containing the following columns:
+
+- `Image Filename`: The filename of the processed image.
+- `Caption`: The generated caption describing the image (using the Image Captioning task).
+- `Answer`: The answer to the sample question provided (using the Visual Question Answering task).
 
 ## Troubleshooting
 
-If you encounter any issues while running the script, please ensure that:
-
-- The input folder contains only image files.
-- Your Replicate API token is valid.
-- The required Python libraries are installed.
-
-If issues persist, refer to the error messages for more information on the problem.
-
-## Model Information
-
-The script uses the Salesforce BLIP model, which is a powerful AI model capable of performing tasks such as image captioning and visual question answering. The model is accessed via the Replicate API, which provides a convenient way to integrate the model's capabilities into the script.
-
-You can find more information about the Salesforce BLIP model and the Replicate API on the [Replicate website](https://replicate.com/salesforce/blip/api) and on the [Salesforce Research blog](https://blog.salesforceairesearch.com/blip-2/).
+If there is an error during the processing of an image, the script will print the error message, the filename of the image, and any generated output for the caption and/or visual question answering tasks.
